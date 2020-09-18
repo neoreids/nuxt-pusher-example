@@ -18,3 +18,6 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+# App Key Pusher
+remember to add app `key` and `cluster` pusher in `.env` file
