@@ -13,7 +13,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
-    "pusher-js": "^7.0.0"
+    "pusher-js": "^7.0.0",
+    "sigma": "^2.0.0-alpha40"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

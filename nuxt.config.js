@@ -9,6 +9,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js" },
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/plugins/sigma.parsers.gexf.min.js" },
     ]
   },
 
@@ -26,7 +30,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv'
   ],
 
@@ -36,5 +40,12 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extend(config, { isDev, isClient }) {
+      config.module.rules.push({
+        test: /sigma.*/,
+        use: 'imports-loader?this=>window',
+      })
+      config.resolve.modules.push("node_modules")
+    }
   }
 }
